@@ -223,11 +223,13 @@ Every click becomes `adb shell input keyevent` / `input tap` on
 
 | | |
 |---|---|
-| ![Home](docs/screenshots/01-home.png) | ![Anime](docs/screenshots/02-category-anime.png) |
-| Home: rezka.ag-style header + hero | Аниме: sort tabs, genres, «Найти лучшее» |
-| ![Best dialog](docs/screenshots/03-best-dialog.png) | ![Best applied](docs/screenshots/04-best-applied.png) |
-| Жанр + Период + Поехали | Лучшие: Военные 2020 |
-| ![Genre](docs/screenshots/05-genre-page.png) | ![Player](docs/screenshots/06-player-voiceover.png) |
-| Genre tab | Player chip + MENU hint |
-| ![Озвучка](docs/screenshots/07-voiceover-list.png) | ![Switched](docs/screenshots/08-voiceover-switched.png) |
-| Озвучка list | TVShows selected |
+| ![Home](docs/screenshots/01-home.png) | ![Аниме](docs/screenshots/02-category-anime.png) |
+| Home: rezka.ag-style header + hero | Аниме: sort tabs, genre tabs, «Найти лучшее» |
+| ![Best filter](docs/screenshots/03-best-filter.png) | ![Best applied](docs/screenshots/04-best-applied.png) |
+| «Найти лучшее аниме»: Жанр + Период | «Лучшие: Военные 2020» |
+| ![Genre](docs/screenshots/05-genre-page.png) | ![Подборки](docs/screenshots/06-collections.png) |
+| Genre tab: Военные | Подборки |
+| ![Detail](docs/screenshots/07-detail.png) | ![Player](docs/screenshots/08-player-voiceover.png) |
+| Gravity Falls details | Player + Озвучка chip |
+| ![Озвучка](docs/screenshots/09-voiceover-list.png) | |
+| Озвучка list | |
