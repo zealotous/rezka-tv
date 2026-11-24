@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'me.rezka.tv'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "me.rezka.tv"
+        // Android TV / Android 6.0 target. All permissions used here
+        // (INTERNET, ACCESS_NETWORK_STATE, WAKE_LOCK) are normal permissions,
+        // so targetSdk 23 needs no runtime-permission dialogs. Keeping it at
+        // 23 also avoids the "built for an older Android" warning on newer
+        // Android TV devices.
+        minSdk 22
+        targetSdk 23
+        versionCode 1
+        versionName "1.0.0"
+        resConfigs "ru", "en"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    packagingOptions {
+        resources.excludes += ['META-INF/*.kotlin_module']
+    }
+}
+
+dependencies {
+    // ExoPlayer 2.18.x is the last line that reliably runs on API 22/23
+    // without Media3's newer runtime requirements. It uses MediaCodec, so
+    // H.264 and H.265 are decoded by the Amlogic hardware blocks.
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.18.7'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.7'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.18.7'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.7'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+}

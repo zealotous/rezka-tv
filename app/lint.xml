@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- Deliberate: targetSdk 23 matches the projector's Android 6.0.1 and
+         keeps the app free of runtime permission dialogs (normal perms only). -->
+    <issue id="ExpiredTargetSdkVersion" severity="ignore" />
+
+    <!-- Deliberate: ISRG Root X1/X2 are not in the 2017 system store. -->
+    <issue id="CustomX509TrustManager" severity="ignore" />
+
+    <!-- WebView 56 has an old root store; only whitelisted content hosts are
+         allowed to proceed, see WebActivity.onReceivedSslError. -->
+    <issue id="WebViewClientOnReceivedSslError" severity="ignore" />
+
+    <issue id="UnusedAttribute" severity="ignore" />
+</lint>

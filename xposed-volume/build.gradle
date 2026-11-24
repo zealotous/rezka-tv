@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'me.animego.xposed'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "me.animego.xposed.volumeright"
+        minSdk 23
+        targetSdk 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    // Xposed API classes are provided by the Xposed framework at runtime.
+    compileOnly files('libs/xposed-api.jar')
+}

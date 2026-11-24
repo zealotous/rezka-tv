@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rezka TV</string>
+    <string name="brand">REZKA</string>
+    <string name="brand_suffix">TV</string>
+
+    <string name="loading">Загрузка…</string>
+    <string name="error">Не удалось загрузить. Проверьте подключение к интернету.</string>
+    <string name="retry">Повторить</string>
+    <string name="search">Поиск</string>
+    <string name="search_hint">Название фильма, сериала или мультфильма</string>
+    <string name="search_empty">Ничего не найдено</string>
+    <string name="watch">Смотреть</string>
+    <string name="open_site">Открыть сайт</string>
+    <string name="episodes">Серии</string>
+    <string name="seasons">Сезон</string>
+    <string name="episode">Серия</string>
+    <string name="play_episode">Смотреть серию %d</string>
+    <string name="resolving">Ищем рабочий плеер…</string>
+    <string name="resolve_error">Не удалось получить поток. Попробуйте другую озвучку или откройте страницу на сайте.</string>
+    <string name="retry_episode">Повторить</string>
+    <string name="next_episode">Следующая серия</string>
+    <string name="resume_from">Продолжаем с %s</string>
+    <string name="adblock_on">Реклама заблокирована</string>
+    <string name="web_hint">Если видео не запускается — вернитесь и попробуйте встроенный плеер.</string>
+
+    <string name="voiceover">Озвучка</string>
+    <string name="voiceover_default">Озвучка: по умолчанию</string>
+    <string name="voiceover_hint">МЕНЮ — сменить озвучку</string>
+</resources>

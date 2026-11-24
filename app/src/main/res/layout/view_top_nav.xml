@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topNav"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@drawable/bg_top_bar"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="40dp"
+    android:paddingEnd="24dp">
+
+    <LinearLayout
+        android:id="@+id/topLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/selector_nav_trigger"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="2dp"
+        android:paddingEnd="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.1"
+            android:text="REZKA"
+            android:textColor="@color/accent"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.1"
+            android:text="TV"
+            android:textColor="@color/text"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/topNavList"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:descendantFocusability="afterDescendants"
+        android:focusable="false"
+        android:orientation="horizontal"
+        android:scrollbars="none" />
+
+    <Button
+        android:id="@+id/topSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/selector_button"
+        android:drawablePadding="8dp"
+        android:drawableStart="@drawable/ic_search"
+        android:fontFamily="sans-serif-medium"
+        android:minWidth="104dp"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:text="Поиск"
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        android:textSize="13sp" />
+</LinearLayout>
