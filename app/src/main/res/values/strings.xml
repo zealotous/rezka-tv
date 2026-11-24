@@ -21,6 +21,7 @@
     <string name="retry_episode">Повторить</string>
     <string name="next_episode">Следующая серия</string>
     <string name="resume_from">Продолжаем с %s</string>
+    <string name="back_exit_hint">Нажмите назад ещё раз, чтобы выйти</string>
     <string name="adblock_on">Реклама заблокирована</string>
     <string name="web_hint">Если видео не запускается — вернитесь и попробуйте встроенный плеер.</string>
 

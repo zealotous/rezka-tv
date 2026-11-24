@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -59,6 +60,8 @@ public class PlayerActivity extends Activity {
     public static final String EXTRA_LABELS = "labels";
     public static final String EXTRA_INDEX = "index";
 
+    private static final long BACK_EXIT_WINDOW_MS = 2000L;
+
     private final RezkaClient client = new RezkaClient();
     private final ExecutorService io = Executors.newSingleThreadExecutor();
     private final Handler main = new Handler(Looper.getMainLooper());
@@ -99,6 +102,7 @@ public class PlayerActivity extends Activity {
     private long pendingSeekMs = -1;
     private String lastError;
     private boolean controlsVisible;
+    private long lastBackAt;
     private int seekDirection;
     private long seekAccumMs;
     private long lastSeekTarget;
@@ -823,12 +827,20 @@ public class PlayerActivity extends Activity {
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
             if (event.getAction() == KeyEvent.ACTION_UP) {
-                if (controlsVisible) {
-                    controlsVisible = false;
-                    playerView.hideController();
-                } else {
+                long now = SystemClock.elapsedRealtime();
+                if (lastBackAt > 0 && now - lastBackAt <= BACK_EXIT_WINDOW_MS) {
+                    // Double-back: leave the player.
                     savePosition();
                     finish();
+                } else {
+                    lastBackAt = now;
+                    if (controlsVisible) {
+                        controlsVisible = false;
+                        playerView.hideController();
+                    } else {
+                        Toast.makeText(this, R.string.back_exit_hint,
+                                Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
             return true;
@@ -903,6 +915,12 @@ public class PlayerActivity extends Activity {
         if (player != null) {
             player.setPlayWhenReady(false);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        lastBackAt = 0;
     }
 
     @Override

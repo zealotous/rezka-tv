@@ -82,7 +82,8 @@ adb shell am start -a android.intent.action.VIEW \
   chips.
 * Player: ExoPlayer HLS, resume position, next/previous episode on
   `MEDIA_NEXT` / `MEDIA_PREVIOUS` (or channel up/down), auto-next, custom
-  seek overlay, and an **Озвучка** chip.
+  seek overlay, and an **Озвучка** chip. **Back once** hides the controls;
+  **Back twice** within two seconds leaves the player.
 * Search screen (the **Поиск** button in the header).
 
 ## Voiceover selection (озвучка)
