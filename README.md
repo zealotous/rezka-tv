@@ -78,6 +78,9 @@ adb shell am start -a android.intent.action.VIEW \
   title grid.
 * Horizontal rows on the home: “Продолжить просмотр”, “Избранное”,
   “Сейчас на сайте”, “Мультфильмы”, “Сериалы”, “Фильмы”.
+* **Hold OK** on any poster (or on the hero's Play/Info buttons) to open a
+  TV context menu with **«Добавить в избранное»** (or «Удалить из
+  избранного») and **«Список эпизодов»**.
 * Detail screen with poster, description, genres, season chips and episode
   chips.
 * Player: ExoPlayer HLS, resume position, next/previous episode on

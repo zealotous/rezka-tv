@@ -79,6 +79,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.Holder> {
                 }
             }
         });
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                CardMenu.show(v.getContext(), card.url, card.title, card.poster);
+                return true;
+            }
+        });
         holder.itemView.setScaleX(1f);
         holder.itemView.setScaleY(1f);
 

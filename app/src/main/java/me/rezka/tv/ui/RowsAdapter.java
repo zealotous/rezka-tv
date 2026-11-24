@@ -175,6 +175,18 @@ public class RowsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             };
             play.setOnClickListener(click);
             info.setOnClickListener(click);
+
+            final String favoriteTitle = name;
+            final String favoritePoster = posterUrl;
+            View.OnLongClickListener favoriteClick = new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    CardMenu.show(v.getContext(), card.url, favoriteTitle, favoritePoster);
+                    return true;
+                }
+            };
+            play.setOnLongClickListener(favoriteClick);
+            info.setOnLongClickListener(favoriteClick);
             search.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
